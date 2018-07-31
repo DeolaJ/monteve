@@ -1,0 +1,471 @@
+<!DOCTYPE html>
+<html lang='en'>
+<head>
+	<meta charset="utf-8">
+	<title>
+		Monteve
+	</title>
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="description" content="Monteve project">  
+    <meta name="Adeola" content="author">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="css/bootstrap.css" type="text/css"/>
+	<style>
+		@import url("font-awesome/css/font-awesome.min.css");
+
+		body, html {
+    		padding: 0;
+    		margin: 0;
+    	}
+
+    	.top_body {
+    		margin-bottom: 100px;
+    		padding-top: 50px;
+    		padding-bottom: 50px;
+    	}
+
+    	.top_content p {
+    		font-size: 3em;
+    	}
+
+    	.top_search_bar {
+    		width: 85%;
+    		line-height: 1.8em;
+    		font-size: 1.2em;
+    		padding: 0.6em 1.2em;
+    		border: 2px solid rgb(200, 200, 200);
+    		border-radius: 5px;
+    		box-shadow: 0 0 6px rgb(190, 190, 190);
+    	}
+
+    	.explore {
+    		margin-bottom: 30px;
+    	}
+
+    	.explore h4, .featured h4, .pevents h4, .eventpackage h4 {
+    		margin-bottom: 30px;
+    	}
+
+    	.explore img {
+    		height: 8em;
+    	}
+
+    	.explore .explore_text {
+    		padding-left: 0.4em;
+    		font-size: 1.2em;
+    	}
+
+    	.explore_content {
+    		align-self: center;
+    	}
+
+    	.explore_category .row {
+    		margin-bottom: 20px;
+    		border-radius: 4px;
+    		border: 1px solid rgb(190, 190, 190);
+    		box-shadow: 0 0 2px;
+    		margin-left: 10px;
+    		margin-right: 10px;
+    	}
+
+    	.explore_category .row .col-sm-4, .explore_category .row .col-sm-6 {
+    		padding-left: 0;
+    		padding-right: 0;
+    	}
+
+    	.pevents .pevents_options img {
+    		height: 10em;
+    		width: 100%;
+    		border-radius: 3px;
+    	}
+
+    	.featured, .pevents, .eventpackage {
+    		margin-bottom: 30px;
+    	}
+
+    	.eventpackage .row {
+    		display: flex;
+    	}
+
+    	.pevents_full_link {
+    		text-decoration: underline;
+    	}
+
+    	.featured img {
+    		width: 100%;
+    		border-radius: 2px;
+    	}
+
+    	.featured .col, .eventpackage .col {
+    		padding-right: 5px;
+    		padding-left: 5px;
+    	}
+
+    	.featured .featured_col_right, .eventpackage .eventpackage_col_right {
+    		padding-right: 15px;
+    	}
+
+    	.featured .featured_col_left, .eventpackage .eventpackage_col_left {
+    		padding-left: 15px;
+    	}
+
+    	.eventpackage .eventpackage_list {
+    		margin: 20px;
+    		min-height: 320px;
+    		background-color: rgb(34,100,100);
+    		padding: 20px;
+    		border-radius: 5px;
+    		color: white;
+    		box-shadow: 0px 0px 4px black;
+    	}
+
+    	.eventpackage_list ul {
+    		list-style-type: none;
+    		padding: 0;
+    	}
+
+    	.footer_home {
+    		background-color: rgb(40, 40, 40);
+    		color: white;
+    		padding-top: 30px;
+    		padding-bottom: 30px;
+    		font-size: 14px;
+    	}
+
+    	div.modal-backdrop.in {
+    		opacity: 0;
+    	}
+
+    	div.modal-content {
+    		background-color: rgb(39,57,86);
+    		border-radius: 0;
+    	}
+
+    	.modal-header p {
+    		font-size: 13px;
+    	}
+
+    	div.payment {
+    		background-color: rgba(0,0,0,0.7) !important;
+    		color: white;
+    	}
+
+    	.payment-form div {
+    		justify-content: space-between;
+    	}
+
+    	div button.close {
+    		color: white;    	}
+
+    	div button.close:hover {
+    		color: white;
+    		opacity: 1;
+    	}
+
+    	.modal-header {
+    		display: block;
+    	}
+
+    	.payment input {
+    		width: 100%;
+    		margin: 10px 0;
+    		border: 1px white solid;
+    		background-color: rgb(39,57,86);
+    		outline: none;
+    		padding: 5px 5px;
+    	}
+
+    	.payment-form div input {
+    		flex-basis: 48%; 
+    	}
+
+    	button.payment-btn {
+    		border-radius: none;
+    		float: right;
+    		padding-top: 5px;
+    		padding-bottom: 5px;
+    		font-size: 20px;
+    	}
+
+    	@media (min-width: 600px) {
+    		.payment-form div {
+	    		display: flex;
+	    	}
+    	}
+
+    	.footer_home a {
+    		color: white;
+    	}
+
+    	.footer_home .contact {
+    		margin-bottom: 5px;
+    		margin-top: 15px;
+    	}
+
+    	@media screen and (max-width: 792px) {
+    		.top_content p {
+	    		font-size: 1.5em;
+	    	}
+
+    		.top_search_bar {
+	    		width: 100%;
+	    		line-height: 1.6em;
+	    		font-size: 1.1em;
+	    		padding: 0.4em 0.8em;
+	    	}
+
+	    	.explore img {
+	    		height: 6em;
+	    	}
+
+	    	.explore .explore_text {
+	    		padding-left: 0.3em;
+	    		font-size: 1em;
+	    	}
+    	}
+
+    	@media screen and (max-width: 592px) {
+    		.top_content h1 {
+    			font-size: 1.8em;
+    		}
+
+    		.top_content p {
+	    		font-size: 0.9em;
+	    	}
+
+	    	.explore_content {
+	    		padding-left: 0;
+	    		padding-right: 0;
+	    	}
+
+	    	.explore .explore_text {
+	    		padding-left: 10px;
+	    		line-height: 30px;
+	    	}
+    	}
+	</style>
+</head>
+<body>
+ 
+ 	<div class='container-fluid'>
+ 		<div class='container'>
+ 			<div class='top_body'>
+	 			<div class='top_content'>
+		 			<h1>Monteve</h1>
+		 			<p class='display-4'>We help students, student organizations or private individuals set up payment packages for ticket bookings for any Event</p>
+	 			</div>
+	 			<input type='search' placeholder="Search" class='top_search_bar' />
+ 			</div>
+ 		</div>
+ 		<div class='container-fluid explore'>
+ 			<h4>Explore</h4>
+	 			<div class='row explore_category'>
+	 				<div class='col-sm-4'>
+	 					<a href='#'>
+		 					<div class='row'>
+			 					<img src='prof.png' alt='explore_categories' class='col-sm-4'>
+			 					<div class='col-sm-8 explore_content'><span class='explore_text'><strong>House party</strong></span></div>
+			 				</div>
+			 			</a>
+	 				</div>
+	 				<div class='col-sm-4'>
+	 					<a href='#'>
+		 					<div class='row'>
+			 					<img src='prof.png' alt='explore_categories' class='col-sm-4'>
+			 					<div class='col-sm-8 explore_content'><span class='explore_text'><strong>Dinner</strong></span></div>
+			 				</div>
+			 			</a>
+	 				</div>
+	 				<div class='col-sm-4'>
+	 					<a href='#'>
+		 					<div class='row'>
+			 					<img src='prof.png' alt='explore_categories' class='col-sm-4'>
+			 					<div class='col-sm-8 explore_content'><span class='explore_text'><strong>Off Campus Hangouts</strong></span></div>
+			 				</div>
+			 			</a>
+	 				</div>
+ 				</div>
+ 		</div>
+ 		<div class='container-fluid featured'>
+ 			<h4>Featured destinations</h4>
+ 			<div class='row'>
+ 				<div class='col-sm-3 col-6 featured_col_left'>
+ 					<a href='#'>
+ 						<img src='prof.png' alt=''>
+ 						<h6>Main Auditorium, University of Lagos</h6>
+ 					</a>
+ 				</div>
+ 				<div class='col-sm-3 col-6'>
+ 					<a href='#'>
+ 						<img src='prof.png' alt=''>
+ 						<h6>Ampak Hall, Ikeja</h6>
+ 					</a>
+ 				</div>
+ 				<div class='col-sm-3 col-6'>
+ 					<a href='#'>
+ 						<img src='prof.png' alt=''>
+ 						<h6>Lekki Colloseum, Lekki</h6>
+ 					</a>
+ 				</div>
+ 				<div class='col-sm-3 col-6 featured_col_right'>
+ 					<a href='#'>
+ 						<img src='prof.png' alt=''>
+ 						<h6>Staff school hall, University of Lagos</h6>
+ 					</a>
+ 				</div>
+ 			</div>
+ 		</div>
+ 		<div class='container-fluid pevents'>
+ 			<h4>Past events</h4>
+ 				<div class='row pevents_options'>
+ 					<div class='col-sm-4 pevents_options_list'>
+ 						<a href='#'>
+ 							<img src='prof.png' alt=''>
+ 							<h6>Engineering Dinner</h6>
+ 							<p>12/09/2017 <br/>
+ 							NGN 5,000 per ticket <br/>
+ 							<i class='fa fa-star'></i><i class='fa fa-star'></i><i class='fa fa-star'></i><i class='fa fa-star-o'></i><i class='fa fa-star-o'></i>
+ 							</p>
+ 						</a>
+ 					</div>
+ 					<div class='col-sm-4 pevents_options_list'>
+ 						<a href='#'>
+ 							<img src='prof.png' alt=''>
+ 							<h6>Law Students Dinner</h6>
+ 							<p>12/09/2017 <br/>
+ 							NGN 5,000 per ticket <br/>
+ 							<i class='fa fa-star'></i><i class='fa fa-star'></i><i class='fa fa-star'></i><i class='fa fa-star-o'></i><i class='fa fa-star-o'></i>
+ 							</p>
+ 						</a>
+ 					</div>
+ 					<div class='col-sm-4 pevents_options_list'>
+ 						<a href='#'>
+ 							<img src='prof.png' alt=''>
+ 							<h6>Trap House Party</h6>
+ 							<p>3/03/2018 <br/>
+ 							NGN 4,000 per ticket <br/>
+ 							<i class='fa fa-star'></i><i class='fa fa-star'></i><i class='fa fa-star'></i><i class='fa fa-star-o'></i><i class='fa fa-star-o'></i>
+ 							</p>
+ 						</a>
+ 					</div>
+ 					<div class='col-sm-4 pevents_options_list'>
+ 						<a href='#'>
+ 							<img src='prof.png' alt=''>
+ 							<h6>Club rave</h6>
+ 							<p>10/03/2018 <br/>
+ 							NGN 3,000 per ticket <br/>
+ 							<i class='fa fa-star'></i><i class='fa fa-star'></i><i class='fa fa-star'></i><i class='fa fa-star-o'></i><i class='fa fa-star-o'></i>
+ 							</p>
+ 						</a>
+ 					</div>
+ 					<div class='col-sm-4 pevents_options_list'>
+ 						<a href='#'>
+ 							<img src='prof.png' alt=''>
+ 							<h6>Untamed</h6>
+ 							<p>20/04/2018 <br/>
+ 							NGN 2,000 per ticket <br/>
+ 							<i class='fa fa-star'></i><i class='fa fa-star'></i><i class='fa fa-star'></i><i class='fa fa-star-o'></i><i class='fa fa-star-o'></i>
+ 							</p>
+ 						</a>
+ 					</div>
+ 					<div class='col-sm-4 pevents_options_list'>
+ 						<a href='#'>
+ 							<img src='prof.png' alt=''>
+ 							<h6>Science Students Dinner</h6>
+ 							<p>12/09/2017 <br/>
+ 							NGN 5,000 per ticket <br/>
+ 							<i class='fa fa-star'></i><i class='fa fa-star'></i><i class='fa fa-star'></i><i class='fa fa-star-o'></i><i class='fa fa-star-o'></i>
+ 							</p>
+ 						</a>
+ 					</div>
+ 				</div>
+ 				<div class='pevents_full_link'>
+ 					<a href='#'>
+	 					Show all
+	 				</a>
+	 			</div>
+ 		</div>
+ 		<div class='container-fluid eventpackage'>
+ 			<h4>Event Packages</h4>
+ 			<div class='row'>
+ 				<div class='col-sm-4 col-12 eventpackage_col_left'>
+ 					<div class='eventpackage_list text-center'>
+ 						<h3>Basic</h3>
+ 						<h4>NGN 100,000</h4>
+ 						<ul>
+ 							<li>Publicity</li>
+ 							<li>Less than 100 tickets</li>
+ 						</ul>
+ 						<a class='payment-text' data-toggle="modal" data-target="#myModal"><button class='btn-primary'>Pay now</button></a>
+ 					</div>
+ 				</div>
+ 				<div class='col-sm-4 col-12'>
+ 					<div class='eventpackage_list text-center'>
+ 						<h3>Standard</h3>
+ 						<h4>NGN 250,000</h4>
+ 						<ul>
+ 							<li>Publicity</li>
+ 							<li>Customized souvenirs</li>
+ 							<li>Between 100 and 1000 tickets</li>
+ 						</ul>
+ 						<a class='payment-text' data-toggle="modal" data-target="#myModal"><button class='btn-primary'>Pay now</button></a>
+ 					</div>
+ 				</div>
+ 				<div class='col-sm-4 col-12 eventpackage_col_right'>
+ 					<div class='eventpackage_list text-center'>
+ 						<h3>Premium</h3>
+ 						<h4>NGN 500,000</h4>
+ 						<ul>
+ 							<li>Publicity</li>
+ 							<li>Secured Venue</li>
+ 							<li>Transportation</li>
+ 							<li>Customized souvenirs</li>
+ 							<li>Over 1000 tickets</li>
+ 						</ul>
+ 						<a class='payment-text' data-toggle="modal" data-target="#myModal"><button class='btn-primary'>Pay now</button></a>
+ 					</div>
+ 				</div>
+ 				<div class="modal fade payment" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+					<div class="modal-dialog" role="document" style='z-index: 10000 !important;'>
+						<div class="modal-content">
+							<div class="modal-header">
+								<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+								<div>
+									<h4 class="modal-title" id="myModalLabel">Please fill the form below</h4>
+									<p>Input your card details</p>
+								</div>
+							</div>
+							<div class="modal-body">
+								<form class='payment-form'  id='payment-form'>
+									<input name='cnumber' type='number' placeholder='Credit Card Number' id='cnumber' required/>
+									<div>
+										<input type='cvv' name='date' placeholder='Expiry Date' />
+										<input type='number' name='cvv' placeholder='CVV' />
+									</div>
+									<button type="submit" class="btn btn-primary payment-btn">SUBMIT</button>
+								</form>
+							</div>    
+						</div>
+					</div>
+				</div>
+ 			</div>
+ 		</div>
+ 	</div>
+<footer class='footer_home'>
+	<div class='container-fluid'>
+		<div class='text-center'>
+			<ul class='list-inline contact'>
+				<li class='list-inline-item'><a href='#'><i class='fa fa-facebook'></i></a></li>
+				<li class='list-inline-item'><a href='#'><i class='fa fa-twitter'></i></a></li>
+				<li class='list-inline-item'><a href='#'><i class='fa fa-instagram'></i></a></li>
+			</ul>
+			<div class='text-center'>
+				<span>Copyright &copy; Monteve 2018</span>
+			</div>
+		</div>
+	</div>
+</footer>
+<script src='jquery.js'></script>
+<script src='js/bootstrap.js'></script>
+</body>
+</html>
