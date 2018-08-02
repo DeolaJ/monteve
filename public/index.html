@@ -396,7 +396,7 @@
  							<li>Publicity</li>
  							<li>Less than 100 tickets</li>
  						</ul>
- 						<a class='payment-text' data-toggle="modal" data-target="#myModal"><button class='btn-primary'>Pay now</button></a>
+ 						<a class='payment-text' data-toggle="modal" data-target="#myModal1"><button class='btn-primary'>Pay now</button></a>
  					</div>
  				</div>
  				<div class='col-sm-4 col-12'>
@@ -408,7 +408,7 @@
  							<li>Customized souvenirs</li>
  							<li>Between 100 and 1000 tickets</li>
  						</ul>
- 						<a class='payment-text' data-toggle="modal" data-target="#myModal"><button class='btn-primary'>Pay now</button></a>
+ 						<a class='payment-text' data-toggle="modal" data-target="#myModal2"><button class='btn-primary'>Pay now</button></a>
  					</div>
  				</div>
  				<div class='col-sm-4 col-12 eventpackage_col_right'>
@@ -422,10 +422,11 @@
  							<li>Customized souvenirs</li>
  							<li>Over 1000 tickets</li>
  						</ul>
- 						<a class='payment-text' data-toggle="modal" data-target="#myModal"><button class='btn-primary'>Pay now</button></a>
+ 						<a class='payment-text' data-toggle="modal" data-target="#myModal3"><button class='btn-primary'>Pay now</button></a>
  					</div>
  				</div>
- 				<div class="modal fade payment" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+
+ 				<div class="modal fade payment" id="myModal1" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
 					<div class="modal-dialog" role="document" style='z-index: 10000 !important;'>
 						<div class="modal-content">
 							<div class="modal-header">
@@ -442,12 +443,60 @@
 										<input type='cvv' name='date' placeholder='Expiry Date' />
 										<input type='number' name='cvv' placeholder='CVV' />
 									</div>
-									<button type="submit" class="btn btn-primary payment-btn">SUBMIT</button>
+									<a href='https://ravesandbox.flutterwave.com/pay/ran3hthguxsn' class="btn btn-primary payment-btn" target='_blank'>Pay</a>
 								</form>
 							</div>    
 						</div>
 					</div>
 				</div>
+
+                <div class="modal fade payment" id="myModal2" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+                    <div class="modal-dialog" role="document" style='z-index: 10000 !important;'>
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                                <div>
+                                    <h4 class="modal-title" id="myModalLabel">Please fill the form below</h4>
+                                    <p>Input your card details</p>
+                                </div>
+                            </div>
+                            <div class="modal-body">
+                                <form class='payment-form'  id='payment-form'>
+                                    <input name='cnumber' type='number' placeholder='Credit Card Number' id='cnumber' required/>
+                                    <div>
+                                        <input type='cvv' name='date' placeholder='Expiry Date' />
+                                        <input type='number' name='cvv' placeholder='CVV' />
+                                    </div>
+                                    <a href='https://ravesandbox.flutterwave.com/pay/1t2usraphqak' class="btn btn-primary payment-btn" target='_blank'>Pay</a>
+                                </form>
+                            </div>    
+                        </div>
+                    </div>
+                </div>
+
+                <div class="modal fade payment" id="myModal3" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+                    <div class="modal-dialog" role="document" style='z-index: 10000 !important;'>
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                                <div>
+                                    <h4 class="modal-title" id="myModalLabel">Please fill the form below</h4>
+                                    <p>Input your card details</p>
+                                </div>
+                            </div>
+                            <div class="modal-body">
+                                <form class='payment-form'  id='payment-form'>
+                                    <input name='cnumber' type='number' placeholder='Credit Card Number' id='cnumber' required/>
+                                    <div>
+                                        <input type='cvv' name='date' placeholder='Expiry Date' />
+                                        <input type='number' name='cvv' placeholder='CVV' />
+                                    </div>
+                                    <a href='https://ravesandbox.flutterwave.com/pay/c9joub2t0rl6' class="btn btn-primary payment-btn" target='_blank'>Pay</a>
+                                </form>
+                            </div>    
+                        </div>
+                    </div>
+                </div>
  			</div>
  		</div>
  	</div>
